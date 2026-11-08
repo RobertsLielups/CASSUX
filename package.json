@@ -1,0 +1,21 @@
+{
+  "name": "cassux",
+  "private": true,
+  "packageManager": "pnpm@12.18.0",
+  "engines": {
+    "node": ">=20.19.0"
+  },
+  "scripts": {
+    "dev": "pnpm --filter @cassux/web dev",
+    "build": "pnpm --filter @cassux/web build",
+    "lint": "pnpm --filter @cassux/web lint",
+    "typecheck": "pnpm -r typecheck",
+    "test": "pnpm --filter @cassux/game-core test && pnpm --filter @cassux/web test",
+    "test:e2e": "playwright test",
+    "check": "pnpm typecheck && pnpm lint && pnpm test && pnpm build"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.56.1",
+    "typescript": "^5.9.3"
+  }
+}
